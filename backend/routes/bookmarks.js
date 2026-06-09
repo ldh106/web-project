@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
   let query = 'SELECT * FROM bookmarks WHERE user_id = ?';
   const params = [req.user.id];
 
-  if (tag) { query += ' AND tag = ?'; params.push(tag); }
+  if (tag) { query += ' AND tag LIKE ?'; params.push(`%${tag}%`); }
   if (search) { query += ' AND (title LIKE ? OR url LIKE ?)'; params.push(`%${search}%`, `%${search}%`); }
 
   query += ' ORDER BY created_at DESC';
