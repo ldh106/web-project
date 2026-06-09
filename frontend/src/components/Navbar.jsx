@@ -3,7 +3,7 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 
 export default function Navbar({ username, onLogout }) {
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{backgroundColor: '#10B981'}} >
       <Toolbar>
         <BookmarkIcon sx={{ mr: 1 }} />
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
